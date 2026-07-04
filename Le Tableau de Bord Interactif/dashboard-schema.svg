@@ -1,0 +1,141 @@
+<svg viewBox="0 0 1050 720" xmlns="http://www.w3.org/2000/svg" font-family="Helvetica, Arial, sans-serif">
+  <rect x="0" y="0" width="1050" height="720" fill="#fbf9f4"/>
+  <text x="525" y="35" text-anchor="middle" font-size="24" font-weight="bold" fill="#2b2b2b">Schéma de câblage — Le Tableau de Bord Interactif</text>
+
+  <!-- ARDUINO -->
+  <rect x="40" y="90" width="230" height="500" rx="10" fill="#1e88a8" stroke="#12546a" stroke-width="2"/>
+  <text x="155" y="120" text-anchor="middle" font-size="18" font-weight="bold" fill="#fff">ARDUINO UNO</text>
+
+  <g font-size="14" fill="#fff">
+    <text x="60" y="165">5V</text>
+    <text x="60" y="195">GND</text>
+    <text x="60" y="225">A0</text>
+    <text x="60" y="270">Pin 12 (RS)</text>
+    <text x="60" y="300">Pin 11 (E)</text>
+    <text x="60" y="330">Pin 5 (D4)</text>
+    <text x="60" y="360">Pin 4 (D5)</text>
+    <text x="60" y="390">Pin 3 (D6)</text>
+    <text x="60" y="420">Pin 2 (D7)</text>
+    <text x="60" y="470">Pin 9 (PWM ~)</text>
+  </g>
+  <g fill="#fff">
+    <circle cx="265" cy="161" r="4"/>
+    <circle cx="265" cy="191" r="4"/>
+    <circle cx="265" cy="221" r="4"/>
+    <circle cx="265" cy="266" r="4"/>
+    <circle cx="265" cy="296" r="4"/>
+    <circle cx="265" cy="326" r="4"/>
+    <circle cx="265" cy="356" r="4"/>
+    <circle cx="265" cy="386" r="4"/>
+    <circle cx="265" cy="416" r="4"/>
+    <circle cx="265" cy="466" r="4"/>
+  </g>
+
+  <!-- LCD -->
+  <rect x="640" y="60" width="360" height="150" rx="10" fill="#2e7d32" stroke="#1b5e20" stroke-width="2"/>
+  <text x="820" y="90" text-anchor="middle" font-size="18" font-weight="bold" fill="#fff">ÉCRAN LCD 16x2</text>
+  <g font-size="12" fill="#fff">
+    <text x="655" y="115">VSS</text>
+    <text x="655" y="135">VDD</text>
+    <text x="655" y="155">VO</text>
+    <text x="655" y="175">RS</text>
+    <text x="655" y="195">RW</text>
+
+    <text x="745" y="115">E</text>
+    <text x="745" y="135">D4</text>
+    <text x="745" y="155">D5</text>
+    <text x="745" y="175">D6</text>
+    <text x="745" y="195">D7</text>
+  </g>
+  <g fill="#fff">
+    <circle cx="638" cy="111" r="4"/>
+    <circle cx="638" cy="131" r="4"/>
+    <circle cx="638" cy="151" r="4"/>
+    <circle cx="638" cy="171" r="4"/>
+    <circle cx="638" cy="191" r="4"/>
+    <circle cx="730" cy="111" r="4"/>
+    <circle cx="730" cy="131" r="4"/>
+    <circle cx="730" cy="151" r="4"/>
+    <circle cx="730" cy="171" r="4"/>
+    <circle cx="730" cy="191" r="4"/>
+  </g>
+
+  <!-- POTENTIOMETRE -->
+  <g transform="translate(400,140)">
+    <rect x="0" y="0" width="150" height="70" rx="8" fill="#f9a825" stroke="#a86e00" stroke-width="2"/>
+    <text x="75" y="25" text-anchor="middle" font-size="13" font-weight="bold" fill="#3b2c00">POTENTIOMÈTRE</text>
+    <circle cx="75" cy="48" r="14" fill="#fff8e1" stroke="#a86e00" stroke-width="1.5"/>
+    <line x1="75" y1="48" x2="87" y2="37" stroke="#a86e00" stroke-width="2"/>
+    <circle cx="0" cy="70" r="4" fill="#3b2c00"/>
+    <circle cx="75" cy="0" r="4" fill="#3b2c00"/>
+    <circle cx="150" cy="70" r="4" fill="#3b2c00"/>
+    <text x="0" y="85" text-anchor="middle" font-size="11" fill="#3b2c00">GND</text>
+    <text x="75" y="-8" text-anchor="middle" font-size="11" fill="#3b2c00">A0</text>
+    <text x="150" y="85" text-anchor="middle" font-size="11" fill="#3b2c00">5V</text>
+  </g>
+
+  <!-- LED + RESISTANCE -->
+  <g transform="translate(420,480)">
+    <circle cx="30" cy="10" r="22" fill="#fff9c4" stroke="#f9a825" stroke-width="3"/>
+    <text x="30" y="16" text-anchor="middle" font-size="15">💡</text>
+    <text x="30" y="-12" text-anchor="middle" font-size="12" font-weight="bold" fill="#5c4300">LED</text>
+    <line x1="15" y1="32" x2="15" y2="55" stroke="#333" stroke-width="2"/>
+    <line x1="50" y1="32" x2="50" y2="55" stroke="#333" stroke-width="2"/>
+    <text x="15" y="68" text-anchor="middle" font-size="9">+</text>
+    <text x="50" y="68" text-anchor="middle" font-size="9">-</text>
+
+    <rect x="0" y="55" width="14" height="46" rx="3" fill="#d7ccc8" stroke="#5d4037" stroke-width="1.5" transform="translate(15,0)"/>
+    <text x="90" y="80" font-size="11" fill="#5d4037">R 220Ω</text>
+  </g>
+
+  <!-- CONNECTIONS -->
+  <!-- Arduino 5V -> pot right + LCD VDD -->
+  <path d="M265,161 L330,161 L330,140 L550,140" fill="none" stroke="#d32f2f" stroke-width="2" stroke-dasharray="0"/>
+  <path d="M330,140 L330,205 L400,205" fill="none" stroke="#d32f2f" stroke-width="2.5"/>
+  <path d="M550,140 L550,131 L638,131" fill="none" stroke="#d32f2f" stroke-width="2.5"/>
+
+  <!-- Arduino GND -> pot left + LCD VSS/VO/RW + LED cathode -->
+  <path d="M265,191 L300,191 L300,600 L890,600 L890,111" fill="none" stroke="#333" stroke-width="2.5"/>
+  <path d="M300,220 L400,220" fill="none" stroke="#333" stroke-width="2"/>
+  <path d="M890,111 L638,111" fill="none" stroke="#333" stroke-width="1.5" stroke-dasharray="4,3"/>
+  <path d="M890,151 L638,151" fill="none" stroke="#333" stroke-width="1.5" stroke-dasharray="4,3"/>
+  <text x="895" y="145" font-size="10" fill="#333">VO → GND (contraste max)</text>
+  <path d="M890,191 L638,191" fill="none" stroke="#333" stroke-width="1.5" stroke-dasharray="4,3"/>
+  <path d="M890,600 L465,600 L465,555" fill="none" stroke="#333" stroke-width="2"/>
+
+  <!-- Pot center (A0) -> Arduino A0 -->
+  <path d="M475,140 L475,120 L340,120 L340,221 L265,221" fill="none" stroke="#f57f17" stroke-width="2.5"/>
+
+  <!-- Arduino digital pins to LCD -->
+  <path d="M265,266 L638,266 L638,171" fill="none" stroke="#6a1b9a" stroke-width="2"/>
+  <text x="450" y="260" font-size="11" fill="#6a1b9a">RS</text>
+
+  <path d="M265,296 L730,296 L730,111" fill="none" stroke="#00838f" stroke-width="2"/>
+  <text x="450" y="310" font-size="11" fill="#00838f">E</text>
+
+  <path d="M265,326 L700,326 L700,131" fill="none" stroke="#c62828" stroke-width="2"/>
+  <text x="450" y="340" font-size="11" fill="#c62828">D4</text>
+
+  <path d="M265,356 L680,356 L680,151" fill="none" stroke="#2e7d32" stroke-width="2"/>
+  <text x="450" y="370" font-size="11" fill="#2e7d32">D5</text>
+
+  <path d="M265,386 L660,386 L660,171" fill="none" stroke="#ef6c00" stroke-width="2"/>
+  <text x="450" y="400" font-size="11" fill="#ef6c00">D6</text>
+
+  <path d="M265,416 L745,416 L745,191" fill="none" stroke="#4527a0" stroke-width="2"/>
+  <text x="450" y="430" font-size="11" fill="#4527a0">D7</text>
+
+  <!-- Arduino Pin9 -> LED anode via resistor -->
+  <path d="M265,466 L400,466 L400,490 L420,490" fill="none" stroke="#6a1b9a" stroke-width="2.5"/>
+  <text x="300" y="460" font-size="11" fill="#6a1b9a">Pin 9 → R220Ω → LED (+)</text>
+
+  <!-- Legend -->
+  <g font-size="12">
+    <rect x="40" y="630" width="960" height="60" rx="8" fill="#ffffff" stroke="#ccc"/>
+    <line x1="60" y1="650" x2="90" y2="650" stroke="#d32f2f" stroke-width="3"/><text x="97" y="654">5V</text>
+    <line x1="140" y1="650" x2="170" y2="650" stroke="#333" stroke-width="3"/><text x="177" y="654">GND</text>
+    <line x1="230" y1="650" x2="260" y2="650" stroke="#f57f17" stroke-width="3"/><text x="267" y="654">Signal potentiomètre (A0)</text>
+    <line x1="480" y1="650" x2="510" y2="650" stroke="#6a1b9a" stroke-width="3"/><text x="517" y="654">Données LCD / PWM LED</text>
+    <text x="500" y="675" text-anchor="middle" font-size="11" fill="#888" font-style="italic">VO relié directement au GND (contraste maximal) — pas de second potentiomètre nécessaire</text>
+  </g>
+</svg>
