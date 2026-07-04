@@ -1,0 +1,159 @@
+<svg viewBox="0 0 1000 720" xmlns="http://www.w3.org/2000/svg" font-family="Helvetica, Arial, sans-serif">
+  <defs>
+    <marker id="dot" markerWidth="8" markerHeight="8" refX="4" refY="4">
+      <circle cx="4" cy="4" r="3" fill="#333"/>
+    </marker>
+  </defs>
+
+  <rect x="0" y="0" width="1000" height="720" fill="#fbf9f4"/>
+  <text x="500" y="35" text-anchor="middle" font-size="24" font-weight="bold" fill="#2b2b2b">Schéma de câblage — Station Météo de Lumière</text>
+
+  <!-- ARDUINO -->
+  <rect x="40" y="90" width="220" height="480" rx="10" fill="#1e88a8" stroke="#12546a" stroke-width="2"/>
+  <text x="150" y="120" text-anchor="middle" font-size="18" font-weight="bold" fill="#fff">ARDUINO UNO</text>
+
+  <!-- Arduino pin labels (right side, going to LCD/components) -->
+  <g font-size="14" fill="#fff">
+    <text x="60" y="170">5V</text>
+    <text x="60" y="200">GND</text>
+    <text x="60" y="230">A0</text>
+    <text x="60" y="290">Pin 12 (RS)</text>
+    <text x="60" y="320">Pin 11 (E)</text>
+    <text x="60" y="350">Pin 5 (D4)</text>
+    <text x="60" y="380">Pin 4 (D5)</text>
+    <text x="60" y="410">Pin 3 (D6)</text>
+    <text x="60" y="440">Pin 2 (D7)</text>
+  </g>
+  <!-- connector dots on arduino edge -->
+  <g fill="#fff">
+    <circle cx="255" cy="166" r="4"/>
+    <circle cx="255" cy="196" r="4"/>
+    <circle cx="255" cy="226" r="4"/>
+    <circle cx="255" cy="286" r="4"/>
+    <circle cx="255" cy="316" r="4"/>
+    <circle cx="255" cy="346" r="4"/>
+    <circle cx="255" cy="376" r="4"/>
+    <circle cx="255" cy="406" r="4"/>
+    <circle cx="255" cy="436" r="4"/>
+  </g>
+
+  <!-- LCD -->
+  <rect x="620" y="60" width="340" height="150" rx="10" fill="#2e7d32" stroke="#1b5e20" stroke-width="2"/>
+  <text x="790" y="90" text-anchor="middle" font-size="18" font-weight="bold" fill="#fff">ÉCRAN LCD 16x2</text>
+  <g font-size="13" fill="#fff">
+    <text x="635" y="115">VSS</text>
+    <text x="635" y="135">VDD</text>
+    <text x="635" y="155">VO</text>
+    <text x="635" y="175">RS</text>
+    <text x="635" y="195">RW</text>
+
+    <text x="720" y="115">E</text>
+    <text x="720" y="135">D4</text>
+    <text x="720" y="155">D5</text>
+    <text x="720" y="175">D6</text>
+    <text x="720" y="195">D7</text>
+
+    <text x="800" y="115">A (+)</text>
+    <text x="800" y="135">K (-)</text>
+  </g>
+  <g fill="#fff">
+    <circle cx="618" cy="111" r="4"/>
+    <circle cx="618" cy="131" r="4"/>
+    <circle cx="618" cy="151" r="4"/>
+    <circle cx="618" cy="171" r="4"/>
+    <circle cx="618" cy="191" r="4"/>
+    <circle cx="705" cy="111" r="4"/>
+    <circle cx="705" cy="131" r="4"/>
+    <circle cx="705" cy="151" r="4"/>
+    <circle cx="705" cy="171" r="4"/>
+    <circle cx="705" cy="191" r="4"/>
+    <circle cx="785" cy="111" r="4"/>
+    <circle cx="785" cy="131" r="4"/>
+  </g>
+
+  <!-- POTENTIOMETRE -->
+  <g>
+    <rect x="360" y="260" width="150" height="70" rx="8" fill="#f9a825" stroke="#a86e00" stroke-width="2"/>
+    <text x="435" y="285" text-anchor="middle" font-size="14" font-weight="bold" fill="#3b2c00">POTENTIOMÈTRE</text>
+    <text x="435" y="305" text-anchor="middle" font-size="12" fill="#3b2c00">(contraste LCD)</text>
+    <circle cx="360" cy="300" r="4" fill="#3b2c00"/>
+    <circle cx="510" cy="300" r="4" fill="#3b2c00"/>
+    <circle cx="435" cy="260" r="4" fill="#3b2c00"/>
+    <text x="345" y="300" text-anchor="end" font-size="12" fill="#3b2c00">GND</text>
+    <text x="525" y="300" font-size="12" fill="#3b2c00">5V</text>
+    <text x="435" y="250" text-anchor="middle" font-size="12" fill="#3b2c00">VO</text>
+  </g>
+
+  <!-- LDR + RESISTANCE -->
+  <g>
+    <rect x="360" y="400" width="150" height="90" rx="8" fill="#8e24aa" stroke="#5c1877" stroke-width="2"/>
+    <text x="435" y="425" text-anchor="middle" font-size="14" font-weight="bold" fill="#fff">LDR + R 10kΩ</text>
+    <text x="435" y="443" text-anchor="middle" font-size="12" fill="#fff">(diviseur de tension)</text>
+    <text x="435" y="461" text-anchor="middle" font-size="11" fill="#fff">LDR: 5V ↔ A0</text>
+    <text x="435" y="476" text-anchor="middle" font-size="11" fill="#fff">R10k: A0 ↔ GND</text>
+    <circle cx="435" cy="400" r="4" fill="#fff"/>
+    <circle cx="360" cy="445" r="4" fill="#fff"/>
+    <circle cx="435" cy="490" r="4" fill="#fff"/>
+  </g>
+
+  <!-- CONNECTIONS -->
+  <!-- Arduino 5V to potentiometer right leg -->
+  <path d="M255,166 L300,166 L300,300 L360,300" fill="none" stroke="#d32f2f" stroke-width="2.5"/>
+  <!-- Arduino GND to potentiometer left leg -->
+  <path d="M255,196 L280,196 L280,320 L340,320 L340,300 L360,300" fill="none" stroke="#333" stroke-width="2.5" stroke-dasharray="0"/>
+  <!-- Potentiometer center to LCD VO -->
+  <path d="M435,260 L435,230 L618,230 L618,151" fill="none" stroke="#1565c0" stroke-width="2.5"/>
+
+  <!-- Arduino 5V to LDR top -->
+  <path d="M255,166 L310,166 L310,400 L435,400" fill="none" stroke="#d32f2f" stroke-width="2.5"/>
+  <!-- Arduino A0 to LDR/R junction (left leg) -->
+  <path d="M255,226 L330,226 L330,445 L360,445" fill="none" stroke="#f57f17" stroke-width="2.5"/>
+  <!-- Resistance bottom to GND -->
+  <path d="M435,490 L435,520 L270,520 L270,196 L255,196" fill="none" stroke="#333" stroke-width="2.5"/>
+
+  <!-- Arduino digital pins to LCD -->
+  <path d="M255,286 L618,286 L618,171" fill="none" stroke="#6a1b9a" stroke-width="2"/>
+  <text x="430" y="280" font-size="11" fill="#6a1b9a">RS</text>
+
+  <path d="M255,316 L705,316 L705,111" fill="none" stroke="#00838f" stroke-width="2"/>
+  <text x="430" y="330" font-size="11" fill="#00838f">E</text>
+
+  <path d="M255,346 L680,346 L680,131" fill="none" stroke="#c62828" stroke-width="2"/>
+  <text x="430" y="360" font-size="11" fill="#c62828">D4</text>
+
+  <path d="M255,376 L660,376 L660,151" fill="none" stroke="#2e7d32" stroke-width="2"/>
+  <text x="430" y="390" font-size="11" fill="#2e7d32">D5</text>
+
+  <path d="M255,406 L640,406 L640,171" fill="none" stroke="#ef6c00" stroke-width="2"/>
+  <text x="430" y="420" font-size="11" fill="#ef6c00">D6</text>
+
+  <path d="M255,436 L720,436 L720,191" fill="none" stroke="#4527a0" stroke-width="2"/>
+  <text x="430" y="450" font-size="11" fill="#4527a0">D7</text>
+
+  <!-- LCD RW to GND -->
+  <path d="M618,191 L575,191 L575,196 L255,196" fill="none" stroke="#333" stroke-width="1.5" stroke-dasharray="4,3"/>
+
+  <!-- LCD A/K to 5V/GND via resistor -->
+  <path d="M785,111 L900,111 L900,166 L255,166" fill="none" stroke="#d32f2f" stroke-width="1.5" stroke-dasharray="4,3"/>
+  <rect x="850" y="103" width="30" height="16" fill="#fff" stroke="#333"/>
+  <text x="865" y="115" text-anchor="middle" font-size="9">220Ω</text>
+  <path d="M785,131 L920,131 L920,196 L255,196" fill="none" stroke="#333" stroke-width="1.5" stroke-dasharray="4,3"/>
+
+  <!-- Legend -->
+  <g font-size="12">
+    <rect x="620" y="560" width="340" height="140" rx="8" fill="#ffffff" stroke="#ccc"/>
+    <text x="790" y="582" text-anchor="middle" font-weight="bold">Légende des couleurs</text>
+    <line x1="635" y1="598" x2="665" y2="598" stroke="#d32f2f" stroke-width="3"/>
+    <text x="672" y="602">Alimentation 5V</text>
+    <line x1="635" y1="618" x2="665" y2="618" stroke="#333" stroke-width="3"/>
+    <text x="672" y="622">Masse (GND)</text>
+    <line x1="635" y1="638" x2="665" y2="638" stroke="#f57f17" stroke-width="3"/>
+    <text x="672" y="642">Signal capteur (A0)</text>
+    <line x1="635" y1="658" x2="665" y2="658" stroke="#1565c0" stroke-width="3"/>
+    <text x="672" y="662">Contraste (VO)</text>
+    <line x1="635" y1="678" x2="665" y2="678" stroke="#6a1b9a" stroke-width="3"/>
+    <text x="672" y="682">Données LCD (RS/E/D4-D7)</text>
+  </g>
+
+  <text x="150" y="650" text-anchor="middle" font-size="12" fill="#666" font-style="italic">Breadboard non représentée — connexions directes simplifiées</text>
+</svg>
